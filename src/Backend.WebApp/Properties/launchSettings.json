@@ -15,10 +15,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebApplication": {
+    "Backend.WebApp": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000",
+      "applicationUrl": "https://localhost:42342;http://localhost:42343",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

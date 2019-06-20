@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2FE680E8-878C-4FF3-80FC-4241411518C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "src\WebApplication\WebApplication.csproj", "{73D1DF82-3328-4862-9B50-65A7B13589F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "src\Backend.WebApp\WebApplication.csproj", "{73D1DF82-3328-4862-9B50-65A7B13589F2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barebone", "src\Barebone\Barebone.csproj", "{1F9BA08C-6AB4-43BA-95D1-48F73D8371D8}"
 EndProject
@@ -38,6 +38,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Incomes Extension", "Incomes Extension", "{B1601E21-8E3F-4A08-8C44-4E0771EF0FF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxes", "src\Taxes\Taxes.csproj", "{1EEB8A2F-3245-4B32-B156-9952B2F07791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.WebApp", "src\Frontend.WebApp\Frontend.WebApp.csproj", "{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{1EEB8A2F-3245-4B32-B156-9952B2F07791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EEB8A2F-3245-4B32-B156-9952B2F07791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EEB8A2F-3245-4B32-B156-9952B2F07791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,5 +125,6 @@ Global
 		{618D4AA9-3564-4E84-A966-E28161848F23} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
 		{B1601E21-8E3F-4A08-8C44-4E0771EF0FF6} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
 		{1EEB8A2F-3245-4B32-B156-9952B2F07791} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
+		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
 	EndGlobalSection
 EndGlobal
