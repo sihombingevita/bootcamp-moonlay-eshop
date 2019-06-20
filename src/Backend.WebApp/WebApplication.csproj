@@ -19,7 +19,9 @@
     <ProjectReference Include="..\Expenses\Expenses.csproj" />
     <ProjectReference Include="..\Expenses.Data.EntityFramework.Sqlite\Expenses.Data.EntityFramework.Sqlite.csproj" />
     <ProjectReference Include="..\Balance\Balance.csproj" />
+    <ProjectReference Include="..\Inventories.Data.EntityFramework.Sqlite\Inventories.Data.EntityFramework.Sqlite.csproj" />
     <ProjectReference Include="..\Taxes\Taxes.csproj" />
+    <ProjectReference Include="..\Inventories\Inventories.csproj" />
   </ItemGroup>
 
 </Project>

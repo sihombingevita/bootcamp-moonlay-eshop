@@ -8,41 +8,46 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace WebApplication
 {
-  public class Startup
-  {
-    private IConfiguration configuration;
-    private string extensionsPath;
-
-    public Startup(IHostingEnvironment hostingEnvironment, IConfiguration configuration, ILoggerFactory loggerFactory)
+    public class Startup
     {
-      this.configuration = configuration;
-      this.extensionsPath = hostingEnvironment.ContentRootPath + this.configuration["Extensions:Path"];
-      loggerFactory.AddConsole();
-      loggerFactory.AddDebug();
-    }
+        private readonly IConfiguration _configuration;
+        private readonly string _extensionsPath;
 
-    public void ConfigureServices(IServiceCollection services)
-    {
-      services.AddExtCore(this.extensionsPath);
-      services.Configure<StorageContextOptions>(options =>
-      {
-        options.ConnectionString = this.configuration.GetConnectionString("Default");
-      }
-      );
-    }
+        public Startup(IHostingEnvironment hostingEnvironment, IConfiguration configuration, ILoggerFactory loggerFactory)
+        {
+            this._configuration = configuration;
+            this._extensionsPath = hostingEnvironment.ContentRootPath + this._configuration["Extensions:Path"];
+            loggerFactory.AddConsole();
+            loggerFactory.AddDebug();
+        }
 
-    public void Configure(IApplicationBuilder applicationBuilder, IHostingEnvironment hostingEnvironment)
-    {
-      if (hostingEnvironment.IsDevelopment())
-      {
-        applicationBuilder.UseDeveloperExceptionPage();
-        applicationBuilder.UseDatabaseErrorPage();
-      }
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddExtCore(this._extensionsPath);
+            services.Configure<StorageContextOptions>(options =>
+                {
+                    options.ConnectionString = this._configuration.GetConnectionString("Default");
+                    options.MigrationsAssembly = typeof(DesignTimeStorageContextFactory).GetTypeInfo().Assembly.FullName;
 
-      applicationBuilder.UseExtCore();
+                }
+            );
+
+            DesignTimeStorageContextFactory.Initialize(services.BuildServiceProvider());
+        }
+
+        public void Configure(IApplicationBuilder applicationBuilder, IHostingEnvironment hostingEnvironment)
+        {
+            if (hostingEnvironment.IsDevelopment())
+            {
+                applicationBuilder.UseDeveloperExceptionPage();
+                applicationBuilder.UseDatabaseErrorPage();
+            }
+
+            applicationBuilder.UseExtCore();
+        }
     }
-  }
 }

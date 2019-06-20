@@ -37,9 +37,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Expenses Extension", "Expen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Incomes Extension", "Incomes Extension", "{B1601E21-8E3F-4A08-8C44-4E0771EF0FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxes", "src\Taxes\Taxes.csproj", "{1EEB8A2F-3245-4B32-B156-9952B2F07791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxes", "src\Taxes\Taxes.csproj", "{1EEB8A2F-3245-4B32-B156-9952B2F07791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.WebApp", "src\Frontend.WebApp\Frontend.WebApp.csproj", "{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.WebApp", "src\Frontend.WebApp\Frontend.WebApp.csproj", "{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventories", "src\Inventories\Inventories.csproj", "{F68F1ADE-8994-466D-B78C-765DFCF54CF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventories.Data.Entities", "src\Inventories.Data.Entities\Inventories.Data.Entities.csproj", "{6088F192-91DA-4977-8437-7248B71C5E08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventories.Data.EntityFramework.Sqlite", "src\Inventories.Data.EntityFramework.Sqlite\Inventories.Data.EntityFramework.Sqlite.csproj", "{BA4F0554-D55B-4340-A7C6-2E6D40B44ED3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventories Extension", "Inventories Extension", "{D34135B1-C2A5-4F0C-8495-419F0E4CE8F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +111,18 @@ Global
 		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68F1ADE-8994-466D-B78C-765DFCF54CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68F1ADE-8994-466D-B78C-765DFCF54CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68F1ADE-8994-466D-B78C-765DFCF54CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68F1ADE-8994-466D-B78C-765DFCF54CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6088F192-91DA-4977-8437-7248B71C5E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6088F192-91DA-4977-8437-7248B71C5E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6088F192-91DA-4977-8437-7248B71C5E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6088F192-91DA-4977-8437-7248B71C5E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4F0554-D55B-4340-A7C6-2E6D40B44ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4F0554-D55B-4340-A7C6-2E6D40B44ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4F0554-D55B-4340-A7C6-2E6D40B44ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4F0554-D55B-4340-A7C6-2E6D40B44ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,5 +146,12 @@ Global
 		{B1601E21-8E3F-4A08-8C44-4E0771EF0FF6} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
 		{1EEB8A2F-3245-4B32-B156-9952B2F07791} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
 		{1E8D490D-EBAF-4CDC-85EA-6FCAE8AC4CAA} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
+		{F68F1ADE-8994-466D-B78C-765DFCF54CF3} = {D34135B1-C2A5-4F0C-8495-419F0E4CE8F3}
+		{6088F192-91DA-4977-8437-7248B71C5E08} = {D34135B1-C2A5-4F0C-8495-419F0E4CE8F3}
+		{BA4F0554-D55B-4340-A7C6-2E6D40B44ED3} = {D34135B1-C2A5-4F0C-8495-419F0E4CE8F3}
+		{D34135B1-C2A5-4F0C-8495-419F0E4CE8F3} = {2FE680E8-878C-4FF3-80FC-4241411518C6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B00CA5A-3361-4A23-89A6-3C1581558F33}
 	EndGlobalSection
 EndGlobal
