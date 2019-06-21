@@ -1,10 +1,11 @@
-﻿using ExtCore.Data.Abstractions;
+﻿using Data.Entities;
+using ExtCore.Data.Abstractions;
 using System;
 using System.Collections.Generic;
 
 namespace Data.Abstractions
 {
-    public interface IRepository<TEntity> : IRepository
+    public interface IRepository<TEntity> : IRepository where TEntity : Entity
     {
         TEntity WithKey(int id);
 

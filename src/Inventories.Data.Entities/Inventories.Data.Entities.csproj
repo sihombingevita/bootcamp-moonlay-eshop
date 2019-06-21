@@ -8,4 +8,8 @@
     <PackageReference Include="ExtCore.Data.Entities.Abstractions" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Entities\Data.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

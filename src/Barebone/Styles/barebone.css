@@ -126,8 +126,12 @@ h1 {
 .table__cell {
   border-bottom: 1px solid #f0f0f0;
   font-weight: normal;
-  text-align: left;
   padding: 5px;
+}
+
+.money
+{
+  text-align: right;
 }
 
 .table__cell--header {
