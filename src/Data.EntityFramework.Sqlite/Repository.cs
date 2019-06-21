@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Data.EntityFramework.Sqlite
 {
-    public class Repository<TEntity> : RepositoryBase<TEntity>, IRepository<TEntity> where TEntity : Entity
+    public abstract class Repository<TEntity> : RepositoryBase<TEntity>, IRepository<TEntity> where TEntity : Entity
     {
         public virtual IEnumerable<TEntity> All(int page = 0, int size = 25)
         {

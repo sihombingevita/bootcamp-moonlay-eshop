@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Barebone\Barebone.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Inventories.Abstractions\Inventories.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
