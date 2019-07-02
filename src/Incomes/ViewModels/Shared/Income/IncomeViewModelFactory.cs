@@ -5,16 +5,17 @@ using Incomes.Data.Entities;
 
 namespace Incomes.ViewModels.Shared
 {
-  public class IncomeViewModelFactory
-  {
-    public IncomeViewModel Create(Income income)
+    public class IncomeViewModelFactory
     {
-      return new IncomeViewModel()
-      {
-        Amount = income.Amount,
-        Description = income.Description,
-        Created = income.Created
-      };
+        public IncomeViewModel Create(Income income)
+        {
+            return new IncomeViewModel()
+            {
+                Amount = income.Amount,
+                Description = income.Description,
+                Created = income.Created,
+                Id = income.Id
+            };
+        }
     }
-  }
 }

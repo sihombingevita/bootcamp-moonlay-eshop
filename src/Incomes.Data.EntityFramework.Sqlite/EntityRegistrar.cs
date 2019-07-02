@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Incomes.Data.EntityFramework.Sqlite
 {
-  public class EntityRegistrar : IEntityRegistrar
-  {
-    public void RegisterEntities(ModelBuilder modelBuilder)
+    public class EntityRegistrar : IEntityRegistrar
     {
-      modelBuilder.Entity<Income>(etb =>
+        public void RegisterEntities(ModelBuilder modelBuilder)
         {
-          etb.HasKey(e => e.Id);
-          etb.Property(e => e.Id).ValueGeneratedOnAdd();
-          etb.ToTable("Incomes");
+            modelBuilder.Entity<Income>(etb =>
+              {
+                  etb.HasKey(e => e.Id);
+                  etb.Property(e => e.Id).ValueGeneratedOnAdd();
+                  etb.ToTable("Incomes");
+              }
+            );
         }
-      );
     }
-  }
 }

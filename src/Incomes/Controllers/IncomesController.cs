@@ -9,34 +9,60 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Incomes.Controllers
 {
-  public class IncomesController : Barebone.Controllers.ControllerBase
-  {
-    public IncomesController(IStorage storage) : base(storage) { }
-
-    public ActionResult Index()
+    public class IncomesController : Barebone.Controllers.ControllerBase
     {
-      return this.View(new IndexViewModelFactory().Create(this.Storage));
+        private readonly IIncomeRepository _repoIncome;
+
+        public IncomesController(IStorage storage) : base(storage)
+        {
+            _repoIncome = this.Storage.GetRepository<IIncomeRepository>();
+        }
+
+        public ActionResult Index()
+        {
+            return this.View(new IndexViewModelFactory().Create(this.Storage));
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(CreateViewModel createViewModel)
+        {
+            // Validations
+            if (this.ModelState.IsValid)
+            {
+
+                // Logic
+                Income income = new CreateViewModelMapper().Map(createViewModel);
+
+                _repoIncome.Create(income);
+                this.Storage.Save();
+
+                // Response
+                return this.RedirectToAction("index");
+            }
+
+            // Response
+            return this.View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            // Validations
+            var income = _repoIncome.WithKey(id);
+            if (income == null)
+                return NotFound();
+
+            // Logic
+            _repoIncome.Delete(income);
+            Storage.Save();
+
+            // Response
+            return RedirectToAction("Index");
+        }
     }
-
-    [HttpGet]
-    public ActionResult Create()
-    {
-      return this.View();
-    }
-
-    [HttpPost]
-    public ActionResult Create(CreateViewModel createViewModel)
-    {
-      if (this.ModelState.IsValid)
-      {
-        Income income = new CreateViewModelMapper().Map(createViewModel);
-
-        this.Storage.GetRepository<IIncomeRepository>().Create(income);
-        this.Storage.Save();
-        return this.RedirectToAction("index");
-      }
-
-      return this.View();
-    }
-  }
 }

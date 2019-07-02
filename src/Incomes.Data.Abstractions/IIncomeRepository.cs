@@ -7,14 +7,14 @@ using Incomes.Data.Entities;
 
 namespace Incomes.Data.Abstractions
 {
-  public interface IIncomeRepository : IRepository
-  {
-    Income WithKey(int id);
-    IEnumerable<Income> All();
-    void Create(Income income);
-    void Edit(Income income);
-    void Delete(int id);
-    void Delete(Income income);
-    decimal Total();
-  }
+    public interface IIncomeRepository : IRepository
+    {
+        Income WithKey(int id);
+        IEnumerable<Income> All();
+        void Create(Income income);
+        void Edit(Income income);
+        void Delete(int id);
+        void Delete(Income income);
+        decimal Total();
+    }
 }

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExtCore.Data.EntityFramework.Sqlite" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data.EntityFramework.Sqlite\Data.EntityFramework.Sqlite.csproj" />
+    <ProjectReference Include="..\Inventories.Abstractions\Inventories.Abstractions.csproj" />
+    <ProjectReference Include="..\Inventories.Data.Entities\Inventories.Data.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
